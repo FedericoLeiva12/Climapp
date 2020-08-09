@@ -16,7 +16,7 @@ function Cards({cities, removeCity}) {
                     min={city.main.temp_min}
                     humidity={city.main.humidity}
                     wind={city.wind.speed}
-                    imageUrl={`http://openweathermap.org/img/wn/${city.weather[0].icon}.png`}
+                    imageUrl={`https://openweathermap.org/img/wn/${city.weather[0].icon}.png`}
                     onClose={e => {
                         e.preventDefault();
                         removeCity(city);
