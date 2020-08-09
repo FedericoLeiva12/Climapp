@@ -1,0 +1,35 @@
+.nav {
+    background-color: #333;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+
+    & .left {
+        width: 100%;
+        margin-bottom: 0.5em;
+
+        & .brand {
+            color: #fff;
+            font-size: 2em;
+            text-decoration: none;
+        }
+    }
+
+    & .right {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .nav {
+        flex-direction: row;
+
+        & .left {
+            margin-bottom: 0px;
+        }
+    }
+}

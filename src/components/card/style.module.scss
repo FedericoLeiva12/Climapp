@@ -1,0 +1,98 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20em;
+    height: 13em;
+    border: 1px solid transparentize($color: #000, $amount: 0.5);
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    padding: 0.25em;
+    margin: 0.5em;
+
+    & .top {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        & .title {
+            width: 75%;
+            & a {
+                margin-left: 0.25em;
+                color: #3c3c62;
+                font-size: 2em;
+                text-decoration: none;
+                font-weight: 300;
+            }
+        }
+
+        & .hide {
+            width: 25%;
+            height: 4em;
+            & button {
+                width: 2.5em;
+                height: 2.5em;
+                border-radius: 0.25em;
+                border: 2px solid transparentize($color: #000, $amount: 0.9);
+                color: transparentize($color: #000, $amount: 0.8);
+                background-color: transparent;
+            }
+        }
+    }
+
+    & .content {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+
+        & .left {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            & table th {
+                font-weight: 200;
+            }
+
+            & .details {
+                width: 100%;
+                display: flex;
+                margin-top: 1em;
+                margin-left: 1em;
+                margin-bottom: 1em;
+                margin-right: -0.5em;
+
+                & .infoD {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    & img {
+                        width: auto;
+                        height: auto;
+                        max-height: 1.5em;
+                    }
+                }
+            }
+        }
+
+        & .right {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: auto;
+                height: auto;
+                min-width: 50%;
+            }
+        }
+    }
+
+    
+}

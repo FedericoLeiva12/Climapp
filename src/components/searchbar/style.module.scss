@@ -1,0 +1,12 @@
+.searchBar {
+    & input {
+        padding: 0.5em;
+        border: 1px solid #4db321;
+        margin: 0.1em;
+        background-color: transparent;
+        color: #4db321;
+        &:nth-child(1) {
+            background-color: #fff;;
+        }
+    }
+}
