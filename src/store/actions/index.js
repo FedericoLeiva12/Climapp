@@ -8,6 +8,7 @@ export const NOT_FOUND = 'NOT_FOUND';
 export const NOT_CONNECTION = 'NOT_CONNECTION';
 export const NOT_INDEXED = 'NOT_INDEXED';
 export const HIDE_ERROR = 'HIDE_ERROR';
+export const ALREADY_INDEXED = 'ALREADY_INDEXED';
 
 // Actions creators
 

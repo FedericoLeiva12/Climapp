@@ -5,4 +5,11 @@
     justify-content: space-around;
     color: #fff;
     background-color: salmon;
+
+    & input {
+        background-color: transparent;
+        border-style: none;
+        color: #fff;
+        font-weight: bold;
+    }
 }

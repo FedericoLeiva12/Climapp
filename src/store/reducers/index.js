@@ -1,4 +1,4 @@
-import { REMOVE_CITY, SEARCH_CITY, NOT_FOUND, NOT_CONNECTION, NOT_INDEXED, HIDE_ERROR } from '../actions';
+import { REMOVE_CITY, SEARCH_CITY, NOT_FOUND, NOT_CONNECTION, NOT_INDEXED, HIDE_ERROR, ALREADY_INDEXED } from '../actions';
 
 const initialState = {
     cities: [],
@@ -45,6 +45,12 @@ export default (state=initialState, action) => {
                 error: false,
                 errorMessage: '',
                 hideError: false
+            }
+        case ALREADY_INDEXED:
+            return {
+                ...state,
+                error: true,
+                errorMessage: 'La ciudad pedida ya ha sido indexada.'
             }
         default:
             return state;

@@ -1,28 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Cards from '../components/cards';
 import { notIndexed } from '../store/actions';
 
 function City({city, notIndexed}) {
-    if(city) {
-        return (
-            <div>
-                <Link to="/">Volver</Link>
-                <Cards cities={[city]} />
-            </div>
-        )
-    } else {
-        notIndexed();
-        return (
-            <Redirect to='/' />
-        )
-    }
+
+    useEffect(() => {
+        if(!city) {
+            notIndexed();
+        }
+    });
+
+    return city?
+                (<div>
+                    <Link to="/">Volver</Link>
+                    <Cards cities={[city]} />
+                </div>):
+                    <Redirect to='/' />
 }
 
 function mapStateToProps(state, ownProps) {
     const id = parseInt(ownProps.match.params.id);
-    console.log(id);
     return {
         city: state.cities.filter(city => city.id === id)[0]
     }

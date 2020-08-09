@@ -1,21 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Error from '../error';
 import { connect } from 'react-redux';
 import { hideError } from '../../store/actions';
 
-function ErrorContainer({error, errorMessage, hideError}) {
+function ErrorContainer({error, errorMessage, hideError, showError}) {
+    useEffect(() => {
+        if(error && showError) hideError();
+    });
+
     return (
         <div>
             {error?
-                !hideError?
-                    <Error
+                <Error
                         error={error}
                         errorMessage={errorMessage}
-                        hideError={hideError} />:
-                    (function(){
-                        hideError();
-                        return ''
-                    })()
+                        hideError={hideError} />
                 :''}
         </div>
     )
@@ -24,7 +23,8 @@ function ErrorContainer({error, errorMessage, hideError}) {
 function mapStateToProps(state) {
     return {
         error: state.error,
-        errorMessage: state.errorMessage
+        errorMessage: state.errorMessage,
+        showError: state.hideError
     }
 }
 
