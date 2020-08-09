@@ -3,7 +3,8 @@ import { REMOVE_CITY, SEARCH_CITY, NOT_FOUND, NOT_CONNECTION, NOT_INDEXED, HIDE_
 const initialState = {
     cities: [],
     error: false,
-    errorMessage: ''
+    errorMessage: '',
+    hideError: false
 };
 
 export default (state=initialState, action) => {
@@ -16,7 +17,8 @@ export default (state=initialState, action) => {
         case REMOVE_CITY:
             return {
                 ...state,
-                cities: state.cities.filter(city => city.id !== action.city.id)
+                cities: state.cities.filter(city => city.id !== action.payload.city.id),
+                hideError: action.payload.hideError
             }
         case NOT_CONNECTION:
             return {
@@ -41,7 +43,8 @@ export default (state=initialState, action) => {
             return {
                 ...state,
                 error: false,
-                errorMessage: ''
+                errorMessage: '',
+                hideError: false
             }
         default:
             return state;

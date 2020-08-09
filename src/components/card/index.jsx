@@ -35,17 +35,17 @@ export default function Card({cityId, cityName, imageUrl, max, min, humidity, wi
 
                     <div className={style.details}>
                         <div className={style.infoD}>
-                            <img src={humidityImg} />
+                            <img src={humidityImg} alt="Humidity"/>
                             <span>{humidity}%</span>
                         </div>
                         <div className={style.infoD}>
-                            <img src={windImg} />
+                            <img src={windImg} alt="Wind"/>
                             <span>{wind}m/s</span>
                         </div>
                     </div>
                 </div>
                 <div className={style.right}>
-                    <img src={imageUrl} />
+                    <img src={imageUrl} alt=""/>
                 </div>
             </div>
         </div>

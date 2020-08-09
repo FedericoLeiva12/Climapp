@@ -37,10 +37,10 @@ export function searchCity(city) {
     }
 }
 
-export function removeCity(city) {
+export function removeCity(city, hideError) {
     return {
         type: REMOVE_CITY,
-        city
+        payload: {city, hideError}
     }
 }
 

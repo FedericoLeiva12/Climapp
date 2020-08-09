@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './style.module.scss';
 import Card from '../card';
-import { removeCity } from '../../store/actions';
+import { removeCity, hideError } from '../../store/actions';
 import { connect } from 'react-redux';
 
 function Cards({cities, removeCity}) {
@@ -19,22 +19,23 @@ function Cards({cities, removeCity}) {
                     imageUrl={`https://openweathermap.org/img/wn/${city.weather[0].icon}.png`}
                     onClose={e => {
                         e.preventDefault();
-                        removeCity(city);
+                        removeCity(city, true);
                     }} />
             ))}
         </div>
     )
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
     return {
-        cities: state.cities
+        cities: ownProps.cities || state.cities
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        removeCity: city => dispatch(removeCity(city))
+        removeCity: (city, redirect) => dispatch(removeCity(city, redirect)),
+        hideError: city => dispatch(hideError())
     }
 }
 

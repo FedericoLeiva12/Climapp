@@ -12,6 +12,7 @@ export default function SearchBar({onSearch}) {
     function onSubmitHandler(e) {
         e.preventDefault();
         onSearch(value);
+        setValue('')
     }
 
     return (

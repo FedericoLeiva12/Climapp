@@ -7,10 +7,15 @@ function ErrorContainer({error, errorMessage, hideError}) {
     return (
         <div>
             {error?
-                <Error
-                    error={error}
-                    errorMessage={errorMessage}
-                    hideError={hideError} />
+                !hideError?
+                    <Error
+                        error={error}
+                        errorMessage={errorMessage}
+                        hideError={hideError} />:
+                    (function(){
+                        hideError();
+                        return ''
+                    })()
                 :''}
         </div>
     )
